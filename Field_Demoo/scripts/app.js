@@ -8,22 +8,11 @@
         };
 
     document.addEventListener("deviceready", function () {
-        navigator.splashscreen.hide();
-
-        app.changeSkin = function (e) {
-            var mobileSkin = "";
-
-            if (e.sender.element.text() === "Flat") {
-                e.sender.element.text("Native");
-                mobileSkin = "flat";
-            } else {
-                e.sender.element.text("Flat");
-                mobileSkin = "";
-            }
-
-            app.application.skin(mobileSkin);
-        };
-
-        app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" });
+                document.addEventListener("backbutton",onBackKeyDown, false);
     }, false);
+    
+    
+    
+    apps = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" ,skin:"flat",transition:"slide"});
+   // app.el = new Everlive("dBl9KNK6JdSKJrQA");
 })(window);
